@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="Dependences/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="sing.css">
+  </head>
+  <body>
+    <div class="main_win">
+      <div class="lr">
+          <input id="log_b" type="radio" name="sing" class="sign_in" checked><label for="log_b" class="sing">Авторизация</label>
+      		<input id="reg_b" type="radio" name="sing" class="sign_up"><label for="reg_b" class="sing">Регистрация</label>
+          <!-- Login -->
+          <div class="left_win">
+            <div class="loginTab" class="tab-pane active">
+              <form>
+                <div class="lr_win">
+                  <label class="label">Логин</label>
+                  <input id="loginName" type="text" class="form-control" placeholder="Введите свой логин">
+                </div>
+                <div class="lr_win">
+                  <a href="#" type="text" class="password-control" onclick="return show_hide_password(this);"></a>
+                  <label class="label">Пароль</label>
+                  <input id="loginPass" type="password" class="form-control" placeholder="Введите свой пароль">
+                </div>
+                <div class="hr"></div>
+                <div class="lr_win">
+                  <button type="button" id="loginButton" class="btn" onclick="sendAccountInfo(0);">Авторизоваться</button>
+                </div>
+                <div class="alert alert-danger lban" role="alert">
+                  <i class="fas fa-exclamation-circle"></i> Ошибка: Ваш аккаунт заблокирован
+                </div>
+                <div class="alert alert-danger incorrect-info" role="alert">
+                  <i class="fas fa-exclamation-circle"></i> Ошибка: Неверный логин или пароль
+                </div>
+              </form>
+            </div>
+          <!-- Register -->
+          <div class="registerTab">
+            <form>
+              <div class="lr_win">
+                <label class="label">Логин</label>
+                <input id="registerName" type="text" class="form-control" placeholder="Введите логин (4-16)" name="password">
+              </div>
+              <div class="lr_win">
+                <label class="label">Пароль</label>
+                <a href="#" type="text" class="password-control2" onclick="return show_hide(this);"></a>
+                <input id="registerPass" type="password" class="form-control" placeholder="Введите пароль (6-18)">
+              </div>
+              <div class="lr_win">
+                <label class="label">Почта</label>
+                <input id="registerMail" type="email" class="form-control" placeholder="Введите свою почту">
+              </div>
+              <div class="hr"></div>
+              <div class="lr_win">
+                <button type="button" class="btn" id="registerButton" onclick="sendAccountInfo(1);">Зарегистрироваться</button>
+              </div>
+              <div class="alert alert-danger rban" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Ваш аккаунт заблокирован
+              </div>
+              <div class="alert alert-danger taken-info" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Этот логин уже занят
+              </div>
+              <div class="alert alert-danger taken2-info" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Эта почта уже занята
+              </div>
+              <div class="alert alert-danger taken3-info" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Этот SocialCLub уже занят
+              </div>
+              <div class="alert alert-danger short-login" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Логин слишком короткий (от 4 до 16 символов)
+              </div>
+              <div class="alert alert-danger long-login" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Логин слишком длиный (от 4 до 16 символов)
+              </div>
+              <div class="alert alert-danger short-pass" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Пароль слишком короткий (от 6 до 24 символов)
+              </div>
+              <div class="alert alert-danger long-pass" role="alert">
+                <i class="fas fa-exclamation-circle"></i> Ошибка: Пароль слишком длиный (от 6 до 24 символов)
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Logo -->
+      <div class="right_win">
+        <h1>Logo</h1>
+      </div>
+    </div>
+
+
+    <script src="sing.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('.alert-danger').hide();
+    </script>
+  </body>
+</html>
